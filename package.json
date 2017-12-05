@@ -1,10 +1,11 @@
 {
   "name": "@knowbiz/exitzero",
-  "version": "1.1.1",
+  "version": "0.0.0-development",
   "description": "make a CLI command always return an exit status of 0. This can be useful in combination with a `watch` process to ensure things keep running.",
   "main": "index.js",
   "scripts": {
-    "test": "standard && node test/test.js"
+    "test": "standard && node test/test.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
     "cli",
@@ -19,7 +20,9 @@
   "author": "Dan Flettre",
   "license": "ISC",
   "devDependencies": {
+    "condition-circle": "^1.5.0",
     "nixt": "^0.4.1",
+    "semantic-release": "^8.2.0",
     "standard": "*",
     "tape": "^3.2.0"
   },
@@ -34,10 +37,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Flet/exitzero.git"
+    "url": "git+https://github.com/knowbiz/exitzero.git"
   },
   "bugs": {
     "url": "https://github.com/Flet/exitzero/issues"
   },
-  "homepage": "https://github.com/Flet/exitzero"
+  "homepage": "https://github.com/Flet/exitzero",
+  "release": {
+    "verifyConditions": "condition-circle"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
 }
