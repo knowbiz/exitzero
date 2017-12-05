@@ -4,7 +4,7 @@ var nixt = require('nixt')
 tapetest('be sure this exits non-zero while not wrapped', function (t) {
   nixt()
     .run('node thisdoesnotexist')
-    .code(8)
+    .code(1)
     .end(t.end)
 })
 
